@@ -1,8 +1,9 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState ={data:""};
+type stateType = typeof initialState;
 const reducers={
-    remove:(state,action:PayloadAction<string>)=>{data:"removed"}
+    remove:(state: stateType,action:PayloadAction<string>)=>{data:"removed"}
 };
 const testSlice = createSlice({
     name:"testSlice",
@@ -10,4 +11,5 @@ const testSlice = createSlice({
     reducers
 });
 
+//export actionsNames too
 export default testSlice.reducer;

@@ -6,7 +6,7 @@ export default interface Question {
 
 };
 export interface Choice{
-    choices:{}
+    choices:string[]
     correct:string;
 
 };
