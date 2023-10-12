@@ -1,5 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-const rootReducer = combineReducers({});
+import { profileReducer } from './profileSlice';
+const rootReducer = combineReducers({
+    profileReducer 
+});
 
 export default rootReducer;
 

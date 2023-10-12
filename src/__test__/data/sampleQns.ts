@@ -1,4 +1,4 @@
-import Question from "../../redux/models/question";
+import Question from "../../redux/models/question.model";
 
  const sampleQns:Question[] =[
  {
