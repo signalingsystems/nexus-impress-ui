@@ -1,6 +1,7 @@
 import { PayloadAction , createSlice } from "@reduxjs/toolkit";
+import { ProfileState } from "../models/state.models";
 
-import ProfileState from "../models/profile.state";
+
 
 const initialState : ProfileState ={
     name: "",

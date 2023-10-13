@@ -88,6 +88,9 @@ export default function Achievements() {
             </Row>
         </Col>
         <Divider /> 
+        <Col>
+        
+        </Col>
     </Row>)
 }
 

@@ -1,4 +1,4 @@
-export default interface ProfileState{
+export interface ProfileState{
     name:string;
     description?:string;
     profilePic?:string;
@@ -8,4 +8,12 @@ export default interface ProfileState{
     email:string;
     score:number;
     
+}
+export  interface StudySet{
+    date:string;
+    title:string;
+    owner:string;
+    score:number;
+    url?:string
+    tags?:string[]
 }
