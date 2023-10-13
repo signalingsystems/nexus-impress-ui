@@ -1,7 +1,8 @@
 import { PayloadAction , createSlice } from "@reduxjs/toolkit";
-import Profile from "../models/profile.model";
 
-const initialState : Profile ={
+import ProfileState from "../models/profile.state";
+
+const initialState : ProfileState ={
     name: "",
     tags: [],
     quizzesTaken: 0,
@@ -9,7 +10,6 @@ const initialState : Profile ={
     email: "",
     score: 0
 };
-type profileStateType = typeof initialState;
 
 const reducers ={
 

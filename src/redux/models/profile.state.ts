@@ -1,4 +1,4 @@
-export default interface Profile{
+export default interface ProfileState{
     name:string;
     description?:string;
     profilePic?:string;

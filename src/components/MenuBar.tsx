@@ -5,7 +5,7 @@ import { HomeOutlined, UserOutlined, QuestionCircleOutlined } from '@ant-design/
 export default function MenuBar() {
 
 
-    return (<Menu mode="horizontal" theme="dark">
+    return (<Menu mode="horizontal" style={{background:'#fff'}}>
 
         <Menu.Item
             key="home"

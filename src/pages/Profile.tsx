@@ -3,6 +3,8 @@ import type { TabsProps } from 'antd';
 import Foot from "../components/Footer";
 import Achievements from "../components/profile/Achievements";
 import { toPadding } from "chart.js/helpers";
+import StudySets from "../components/profile/StudySets";
+import CreateQuiz from "../components/profile/CreateQuiz";
 
 export default function Profile(){
 
@@ -27,18 +29,19 @@ const items: TabsProps['items'] = [
   {
     key: '2',
     label: 'study sets',
-    children: 'study sets',
+    children: <StudySets/>,
   },
   {
     key: '3',
     label: 'create quizes',
-    children: 'create quiz',
+    children: <CreateQuiz/>,
   },
 ];
     return (<>
      <Row>
-      <Col  style={{marginTop:'4em',marginBottom:'1em'}}>
-      <Avatar style={{ backgroundColor: '#7265e6', verticalAlign: 'middle' }} size="large">
+      <Col  style={{marginTop:'1em',marginBottom:'1em'}}>
+        
+      <Avatar style={{ backgroundColor: '#7265e6', verticalAlign: 'middle' }} size={80} >
         {userName}
       </Avatar>
       <Button
@@ -55,6 +58,6 @@ const items: TabsProps['items'] = [
       </Col>
     </Row>
     
-    <Foot/>
+    
     </>);
 }
