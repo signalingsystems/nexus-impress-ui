@@ -1,9 +1,10 @@
-import { Row, Col, Button, Space } from "antd";
+import { Row, Col, Button } from "antd";
 import Question from "../components/Question";
 import sampleQns from "../__test__/data/sampleQns";
 import { useState } from "react";
 
 export default function QuizPage() {
+    // select  quiz tag types  get a random quiz list
     // data from quizReducer state
     //at submit qn/ generate success rate
     const [loading, setLoading] = useState(false);
@@ -12,7 +13,6 @@ export default function QuizPage() {
     function onSubmit() {
 
         setLoading(!loading);
-        console.log('sumit button clicked');
     }
 
 
