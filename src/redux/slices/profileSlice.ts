@@ -9,7 +9,7 @@ const initialState : ProfileState ={
     quizzesTaken: 0,
     badges: [],
     email: "",
-    score: 0
+    score: 23
 };
 
 const reducers ={

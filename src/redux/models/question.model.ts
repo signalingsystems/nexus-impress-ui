@@ -4,9 +4,9 @@ export default interface Question {
     tag:string;
     flagged:boolean;
 
-};
+}
 export interface Choice{
     choices:string[]
     correct:string;
 
-};
+}
