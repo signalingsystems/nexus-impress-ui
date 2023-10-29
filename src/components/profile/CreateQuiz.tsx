@@ -1,4 +1,5 @@
-import { Col, Row } from "antd";
+import {  Col, Row } from "antd";
+import FileUploader from "./FileUploader";
 
 export default function CreateQuiz(){
 
@@ -6,6 +7,8 @@ export default function CreateQuiz(){
     //theme controller
 
     return <Row>
-        <Col> Create quiz tab </Col>
+        <Col> 
+         <FileUploader/> 
+         </Col>
     </Row>
 }

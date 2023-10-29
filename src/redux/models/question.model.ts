@@ -10,3 +10,4 @@ export interface Choice{
     correct:string;
 
 }
+export type UserChoice ={qn:string,ans:string}

@@ -1,8 +1,6 @@
 import { Row,Col, Tabs, Avatar, Button } from "antd";
 import type { TabsProps } from 'antd';
-import Foot from "../components/Footer";
 import Achievements from "../components/profile/Achievements";
-import { toPadding } from "chart.js/helpers";
 import StudySets from "../components/profile/StudySets";
 import CreateQuiz from "../components/profile/CreateQuiz";
 

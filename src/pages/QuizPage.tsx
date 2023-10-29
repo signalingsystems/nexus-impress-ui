@@ -1,18 +1,27 @@
 import { Row, Col, Button } from "antd";
 import Question from "../components/Question";
-import sampleQns from "../__test__/data/sampleQns";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { questionActions } from "../redux/slices/questionsSlice";
 
 export default function QuizPage() {
+    const quizSelector = useSelector((state: RootState) => state.questions);
+    const dispatch =useDispatch();
     // select  quiz tag types  get a random quiz list
     // data from quizReducer state
     //at submit qn/ generate success rate
-    const [loading, setLoading] = useState(false);
+
+    const { questions, loading } = quizSelector;
+    const{setLoading,correctQuiz} = questionActions;
 
     //submit the quiz state object then show modal of results
     function onSubmit() {
+        console.log(quizSelector.userAnswers);
+        dispatch(setLoading(true));
+        dispatch(correctQuiz("sample title")); // quiz title
+      //  dispatch(setLoading(false));
+        console.log(quizSelector)
 
-        setLoading(!loading);
     }
 
 
@@ -22,7 +31,7 @@ export default function QuizPage() {
 
                 <Col span={24}>
                     {
-                        sampleQns.map(
+                        questions.map(
                             (qn, key) => <Question
                                 key={`${key}`}
                                 choices={qn.choices.choices}

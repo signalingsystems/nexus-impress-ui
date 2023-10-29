@@ -7,6 +7,7 @@ export interface ProfileState{
     badges:string[];
     email:string;
     score:number;
+    studySets: StudySet[]
     
 }
 export  interface StudySet{

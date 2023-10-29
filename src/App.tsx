@@ -9,10 +9,11 @@ import { Layout } from 'antd';
 import Foot from "./components/Footer";
 
 function App() {
+  
   const { Header, Content, Footer } = Layout;
   // #15191d
   const bgColor ='#fff';
-
+ 
   return (
     <Provider store={store}>
       <Layout>

@@ -1,36 +1,21 @@
 import { Card, Col, Divider, Row,Typography, Input } from "antd";
 
-import { StudySet } from "../../redux/models/state.models";
 import Tag from "../Tag";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 const { Title } = Typography;
 const { Search } = Input;
 export default function StudySets(){
 
+    const profileSelector = useSelector((state:RootState)=> state.profile)
 
     function onSearchClicked(value:string){
 
     }
 
-    //mock data
-    const studySetList:StudySet[] =[ 
-        {
-        date: 'sept ,2023',
-        title: 'Disease mechanismes Exam 5',
-        owner: 'Flemming',
-        score: 34.5,
-        url:"path/to/quiz",
-        tags:['science','medical','epidemiology']
-    },
-    {
-        date: 'sept ,2023',
-        title: 'Cybersecurity: penetration testing exam ',
-        owner: 'Flemming',
-        score: 74.83,
-        url:"path/to/quiz",
-        tags:['science','security','it','cybersecurity','comp sci']
-    },
-]
+    
+    const studySetList = profileSelector.studySets
     //logic
     //theme controller
 
