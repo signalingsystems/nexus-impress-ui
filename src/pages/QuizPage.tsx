@@ -1,11 +1,15 @@
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, Divider } from "antd";
 import Question from "../components/Question";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { questionActions } from "../redux/slices/questionsSlice";
+import Tag from "../components/Tag";
+import { useState } from "react";
 
 export default function QuizPage() {
     const quizSelector = useSelector((state: RootState) => state.questions);
+    const profileSelector = useSelector((state:RootState)=> state.profile);
+
     const dispatch =useDispatch();
     // select  quiz tag types  get a random quiz list
     // data from quizReducer state
@@ -13,6 +17,10 @@ export default function QuizPage() {
 
     const { questions, loading } = quizSelector;
     const{setLoading,correctQuiz} = questionActions;
+    const{tags} =profileSelector;
+    const uniqueTags = [... new Set(tags)];
+   
+    const [qList,setQList]= useState(questions);
 
     //submit the quiz state object then show modal of results
     function onSubmit() {
@@ -23,15 +31,35 @@ export default function QuizPage() {
         console.log(quizSelector)
 
     }
+    function onTagSelect(tag:string){
+        // switch to arandom  quiz with tag:tag
+        if(tag.toLowerCase() === 'any'){
+            setQList(questions);
+        }else{
+            setQList(questions.filter(qn=>qn.tag === tag ));
+        }
+        console.log(`tag selected : ${tag}`);
+       
+       console.log(qList)
+    }
 
 
     return (
         <>
             <Row>
+                <Col span={24}>
+                    {
+                        uniqueTags.map(
+                            (tag,key)=>
+                            <Tag enabled={true} text={tag} key={key} onClick={()=>onTagSelect(tag)} />)
+
+                    }
+                </Col>
+                <Divider type="horizontal"/>
 
                 <Col span={24}>
                     {
-                        questions.map(
+                        qList.map(
                             (qn, key) => <Question
                                 key={`${key}`}
                                 choices={qn.choices.choices}
@@ -43,15 +71,16 @@ export default function QuizPage() {
                     }
                 </Col>
                 <Col span={12}>
-
-                    <Button
+                    {qList.length>0 ?<Button
                         type="primary"
                         loading={loading}
                         onClick={onSubmit}
                         style={{ marginTop: "60px" }}
                     >
                         {loading ? 'Submitting' : 'submit'}
-                    </Button>
+                    </Button> : 'No quiz with such a tag'}
+
+                    
 
 
                 </Col>

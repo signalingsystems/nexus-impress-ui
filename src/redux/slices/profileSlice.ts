@@ -5,7 +5,7 @@
 import { PayloadAction , createSlice } from "@reduxjs/toolkit";
 import { ProfileState } from "../models/state.models";
 import { StudySet } from "../models/state.models";
-import { studySetList } from "../../__test__/data/sampleStudySet";
+import { sampleProfileTags, studySetList } from "../../__test__/data/sampleStudySet";
 
 
 
@@ -28,7 +28,7 @@ import { studySetList } from "../../__test__/data/sampleStudySet";
 // slice state
 const initialState : ProfileState ={
     name: "",
-    tags: [],
+    tags: [ ... sampleProfileTags],
     quizzesTaken: 0,
     badges: [],
     email: "",

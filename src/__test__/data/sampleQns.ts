@@ -40,6 +40,60 @@ import Question from "../../redux/models/question.model";
     tag:'general',
     flagged:true
 
- }
+ },
+ {
+    qn:'Which African country was formerly known as Abyssinia?',
+    choices:{
+        choices:['Sudan','Ethiopia','Malawi','Egypt'],
+        correct:'Ethiopia'
+    },
+    tag:'geography',
+    flagged:false
+},
+{
+    qn:'What is the softest mineral in the world?',
+    choices:{
+        choices:['Feldspar','Talc','Calscite','Gypsum'],
+        correct:'Talc'
+    },
+    tag:'Geology',
+    flagged:false
+},
+{
+    qn:'Which two countries share the longest international border?',
+    choices:{
+        choices:['Canada and the USA','Kazakhstan and Rusiia','Argentina and Chile','China and Mongolia'],
+        correct:'Canada and the USA'
+    },
+    tag:'geography',
+    flagged:false
+},
+{
+    qn:'What was the first US state?',
+    choices:{
+        choices:['Massachusetts','New Jersey','Virginia','Delaware',],
+        correct:'Delaware'
+    },
+    tag:'history',
+    flagged:false
+},
+{
+    qn:'What’s the most expensive home in the world?',
+    choices:{
+        choices:['Buckingham Palace','Antilia','Villa Leopolda','Les Palais Bulles'],
+        correct:'Buckingham Palace'
+    },
+    tag:'general',
+    flagged:false
+},
+{
+    qn:'What country has the world’s most ancient forest?',
+    choices:{
+        choices:['Brazil','Australia','Japan','USA'],
+        correct:'Australia'
+    },
+    tag:'general',
+    flagged:false
+}
 ];
 export default sampleQns;

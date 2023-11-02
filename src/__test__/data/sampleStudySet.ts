@@ -7,7 +7,7 @@ export const studySetList:StudySet[] =[
     owner: 'Flemming',
     score: 34.5,
     url:"path/to/quiz",
-    tags:['science','medical','epidemiology']
+    tags:['science','history','epidemiology','general','Any']
 },
 {
     date: 'sept ,2023',
@@ -15,6 +15,7 @@ export const studySetList:StudySet[] =[
     owner: 'Flemming',
     score: 74.83,
     url:"path/to/quiz",
-    tags:['science','security','it','cybersecurity','compsci']
+    tags:['geography','security','it','cybersecurity','compsci']
 },
 ]
+export const sampleProfileTags = [... studySetList[0].tags! ,... studySetList[1].tags! ]
