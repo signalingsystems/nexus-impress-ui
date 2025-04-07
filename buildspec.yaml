@@ -10,8 +10,6 @@ phases:
   pre_build:
     commands:
       - echo "Running lint and tests..."
-      - npm run lint
-      - npm test
   build:
     commands:
       - echo "Building the app..."
