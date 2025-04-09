@@ -12,7 +12,7 @@ phases:
       - echo "Running lint and tests..."
       - echo "Running lint and tests..."
       - echo "Waiting for 1 hour to see if we need to refresh the GitHub token..."
-      - sleep 3602 # Wait for 1 hour
+      #- sleep 3602 # Wait for 1 hour
       - echo "Fetching GitHub token..."
   build:
     commands:
