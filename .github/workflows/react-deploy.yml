@@ -30,7 +30,7 @@ jobs:
       run: echo "testing"
       
     - name: Build
-      run: echo "building?
+      run: echo "building?"
 
     - name: Lint
       run: echo "linting?>"
