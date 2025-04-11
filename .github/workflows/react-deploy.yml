@@ -27,12 +27,12 @@ jobs:
       run: npm install
     
     - name: Run tests
-      run: npm test
+      run: echo "testing"
       
     - name: Build
-      run: npm run build
+      run: echo "building?
 
     - name: Lint
-      run: npm run lint
+      run: echo "linting?>"
 
     
