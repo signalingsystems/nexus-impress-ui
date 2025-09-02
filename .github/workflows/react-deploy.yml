@@ -1,38 +1,31 @@
-name: Nexus-impress-ui-React CI/CD
+name: CodeBuild Fleet Docker Issue Reproduction
 
 on:
   push:
-    branches: [ development ]
-  pull_request:
-    branches: [ development ]
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
-
+  container-test-job:
+    runs-on: 
+    - codebuild-test-fleet-${{ github.run_id }}-${{ github.run_attempt }}
+    - image:custom
+    - fleet:test-reproduction-fleet
+    container:
+      image: node:18-alpine  # Public image instead of private artifactory
+    
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm install
-    
-    - name: Run tests
-      run: echo "testing"
-      
-    - name: Build
-      run: echo "building?"
-
-    - name: Lint
-      run: echo "linting?>"
-
-    
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Test Docker availability
+        run: |
+          echo "Testing Docker access from container job..."
+          docker --version || echo "Docker CLI not found"
+          docker version --format '{{.Server.APIVersion}}' || echo "Cannot connect to Docker daemon"
+          
+      - name: Try Docker commands
+        run: |
+          echo "Attempting basic Docker operations..."
+          docker ps || echo "Docker ps failed"
+          docker images || echo "Docker images failed"
